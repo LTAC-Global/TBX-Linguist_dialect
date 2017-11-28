@@ -13,7 +13,7 @@
     
     <pattern id="dialectEnforcement">
         <rule context="tbx:tbx">
-<assert test="attribute::type='TBX-Basic'">The name of this dialect should be TBX-Basic</assert>
+<assert test="attribute::type='TBX-Linguist'">The name of this dialect should be TBX-Linguist</assert>
 <assert test="attribute::style='dca'">The style of this dialect should be declared as 'dca'</assert>
         </rule>
     </pattern>
