@@ -3,7 +3,7 @@
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" startMode="core">
     <mode name="core">
         <namespace ns="urn:iso:std:iso:30042:ed:3.0">
-            <validate schema="https://raw.githubusercontent.com/LTAC-Global/TBX-Linguist_dialect/master/DCA/TBXcoreStruceV03_TBX-Linguist_integrated.rng" useMode="RNG"/>
+            <validate schema="https://raw.githubusercontent.com/LTAC-Global/TBX-Linguist_dialect/master/DCA/TBXcoreStructV03_TBX-Linguist_integrated.rng" useMode="RNG"/>
             <validate schema="https://raw.githubusercontent.com/LTAC-Global/TBX-Linguist_dialect/master/DCT/TBX-Linguist_DCT.sch" useMode="SCH"/>
             <validate schema="https://raw.githubusercontent.com/LTAC-Global/TBX_linguist_module/master/Linguist.sch" useMode="SCH"/>
             <validate schema="https://raw.githubusercontent.com/LTAC-Global/TBX_basic_module/master/Basic.sch" useMode="SCH"/>
