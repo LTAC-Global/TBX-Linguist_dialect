@@ -31,10 +31,10 @@
     </pattern>
     <pattern id="module.min.termNote">
         <rule context="tbx:termNote[@type='administrativeStatus']">
-<assert test=".='admitted' or .='notRecommended' or .='obsolete' or .='preferred'">The termType must be either 'admitted', 'notRecommended', 'obsolete', or 'preferred'</assert>
+            <assert test=".='admittedTerm-admn-sts' or .='deprecatedTerm-admn-sts' or .='supersededTerm-admn-sts' or .='preferredTerm-admn-sts'">The termType must be either 'admittedTerm-admn-sts', 'deprecatedTerm-admn-sts', 'supersededTerm-admn-sts', or 'preferredTerm-admn-sts'</assert>
         </rule>
         <rule context="tbx:termNote[@type='partOfSpeech']">
-<assert test=".='adjective' or .='noun' or .='other' or .='verb' or .='adverb'">Permitted values of /partOfSpeech/ are 'noun', 'other', 'verb', 'adverb', or 'adjective'</assert>
+            <assert test=".='adjective' or .='noun' or .='other' or .='verb' or .='adverb'">Permitted values of /partOfSpeech/ are 'noun', 'other', 'verb', 'adverb', or 'adjective'</assert>
         </rule>
     </pattern>
     
@@ -59,7 +59,7 @@ parent::tbx:langSec or parent::tbx:descripGrp/parent::tbx:langSec">
         </rule>
     </pattern>
     <pattern id="module.basic.termNote">
-        <rule context="tbx:termNote[@type='gender']">
+        <rule context="tbx:termNote[@type='grammaticalGender']">
 <assert test=".='masculine' or .='feminine' or .='neuter' or .='other'">Permitted values of Gender are 'masculine', 'feminine', 'neuter', or 'other'</assert>
         </rule>
         <rule context="tbx:termNote[@type='termLocation']">
