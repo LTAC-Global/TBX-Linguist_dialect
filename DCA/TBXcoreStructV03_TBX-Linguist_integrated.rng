@@ -1091,7 +1091,6 @@
          <value>projectSubset</value>
          <value>reading</value>
          <value>source</value>
-         <value>transferComment</value>
       </choice>
 
    </define>
@@ -1188,6 +1187,7 @@
          <value>register</value>
          <value>termLocation</value>
          <value>termType</value>
+         <value>transferComment</value>
       </choice>
 
    </define>

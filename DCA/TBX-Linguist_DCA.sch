@@ -123,9 +123,6 @@ parent::tbx:langSec or parent::tbx:descripGrp/parent::tbx:langSec">
         <rule context="tbx:admin[@type='reading']">
             <assert test="parent::tbx:termSec or parent::tbx:adminGrp/parent::tbx:termSec">Reading must be at the term level.</assert>
         </rule>
-        <rule context="tbx:admin[@type='transferComment']">
-            <assert test="parent::tbx:langSec or parent::tbx:adminGrp/parent::tbx:langSec">transferComment may only be found at the langSec level.</assert>
-        </rule>
     </pattern>
     
     <pattern id="module.linguist.adminNote">
