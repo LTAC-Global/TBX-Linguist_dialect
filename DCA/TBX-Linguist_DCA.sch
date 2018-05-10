@@ -69,51 +69,55 @@
     <!-- Basic Module Rules -->
     <pattern id="module.basic.admin">
         <rule context="tbx:admin[@type='projectSubset']">
-            <assert test="parent::tbx:conceptEntry or parent::adminGrp/parent::tbx:conceptEntry or 
-                parent::tbx:termSec or parent::tbx:adminGrp/parent::tbx:termSec">Project may only appear at the conceptEntry or termSec levels</assert>
+            <assert test="parent::tbx:conceptEntry or parent::tbx:termSec or parent::adminGrp/(parent::tbx:conceptEntry or
+                parent::tbx:termSec)">Project may only appear at the conceptEntry or termSec levels</assert>
+        </rule>
+        <rule context="tbx:admin[@type='source']">
+            <assert test="parent::tbx:conceptEntry or parent::tbx:langSec or parent::tbx:termSec or
+                parent::tbx:adminGrp/(parent::tbx:conceptEntry or parent::tbx:langSec or parent::tbx:termSec)"></assert>
         </rule>
     </pattern>
     <pattern id="module.basic.descrip">
         <rule context="tbx:descrip[@type='context']">
-<assert test="parent::tbx:termSec or parent::tbx:descripGrp/parent::tbx:termSec">Context appears at the termSec level</assert>
+            <assert test="parent::tbx:termSec or parent::tbx:descripGrp/parent::tbx:termSec">Context appears at the termSec level</assert>
         </rule>
         <rule context="tbx:descrip[@type='definition']">
-<assert test="parent::tbx:conceptEtnry or parent::tbx:descripGrp/parent::tbx:conceptEntry or 
-parent::tbx:langSec or parent::tbx:descripGrp/parent::tbx:langSec">
-    Definition may appear at the conceptEntry or langSec levels.
-</assert>
+            <assert test="parent::tbx:conceptEtnry or parent::tbx:langSec or  
+                parent::tbx:descripGrp/(parent::tbx:conceptEntry or parent::tbx:langSec)">
+                Definition may appear at the conceptEntry or langSec levels.
+            </assert>
         </rule>
     </pattern>
     <pattern id="module.basic.termNote">
         <rule context="tbx:termNote[@type='grammaticalGender']">
-<assert test=".='masculine' or .='feminine' or .='neuter' or .='other'">Permitted values of Gender are 'masculine', 'feminine', 'neuter', or 'other'</assert>
+            <assert test=".='masculine' or .='feminine' or .='neuter' or .='other'">Permitted values of Gender are 'masculine', 'feminine', 'neuter', or 'other'</assert>
         </rule>
         <rule context="tbx:termNote[@type='termLocation']">
             <assert test=".='checkBox' or .='comboBox' or .='comboBoxElement' or .='dialogBox' or .='groupBox' or .='informativeMessage' or .='interactiveMessage' or .='menuItem' or
-               .='progressBar' or .='pushButton' or .='radioButton' or .='slider' or .='spinBox' or .='tab' or .='tableText' or .='textBox' or .='toolTip' or .='user-definedType'">
-               Permitted values are: 	checkBox, comboBox, comboBoxElement, dialogBox, groupBox, informativeMessage, interactiveMessage, menuItem, progressBar, pushButton, radioButton, slider, spinBox, tab, tableText, textBox, toolTip, user-definedType
+                .='progressBar' or .='pushButton' or .='radioButton' or .='slider' or .='spinBox' or .='tab' or .='tableText' or .='textBox' or .='toolTip' or .='user-definedType'">
+                Permitted values are: 	checkBox, comboBox, comboBoxElement, dialogBox, groupBox, informativeMessage, interactiveMessage, menuItem, progressBar, pushButton, radioButton, slider, spinBox, tab, tableText, textBox, toolTip, user-definedType
             </assert>
         </rule>
         <rule context="tbx:termNote[@type='termType']">
-<assert test=".='fullForm' or .='acronym' or .='abbreviation' or .='shortForm' or .='variant' or .='phrase'">Permitted values of Term Type are 'fullForm', 'acronym', 'abbreviation', 'shortForm', 'variant', or 'phrase'</assert>
+            <assert test=".='fullForm' or .='acronym' or .='abbreviation' or .='shortForm' or .='variant' or .='phrase'">Permitted values of Term Type are 'fullForm', 'acronym', 'abbreviation', 'shortForm', 'variant', or 'phrase'</assert>
         </rule>
     </pattern>
     <pattern id="module.basic.transac">
         <rule context="tbx:transac[@type='transactionType']">
-<assert test=".='origination' or .='modification'">Transaction type may be either 'origination' or 'modification'.</assert>
+            <assert test=".='origination' or .='modification'">Transaction type may be either 'origination' or 'modification'.</assert>
         </rule>
     </pattern>
     <pattern id="module.basic.ref">
         <rule context="tbx:ref[@type='crossReference']">
-<assert test="parent::tbx:conceptEntry or parent::tbx:termSec">Cross References must only be found at the conceptEntry or termSec levels.</assert>
+            <assert test="parent::tbx:conceptEntry or parent::tbx:termSec or parent::tbx:*[contains(.,Grp)]/(parent::tbx:conceptEntry or parent::tbx:termSec)">Cross References must only be found at the conceptEntry or termSec levels.</assert>
         </rule>
     </pattern>
     <pattern id="module.basic.xref">
         <rule context="tbx:xref[@type='externalCrossReference']">
-<assert test="parent::tbx:termSec or parent::tbx:conceptEntry">External Cross Reference may be used at the termSec level.</assert>
+            <assert test="parent::tbx:conceptEntry or parent::tbx:termSec or parent::tbx:*[contains(.,Grp)]/(parent::tbx:conceptEntry or parent::tbx:termSec)">External Cross Reference must only be found at the conceptEntry or termSec levels.</assert>
         </rule>
         <rule context="tbx:xref[@type='xGraphic']">
-<assert test="parent::tbx:conceptEntry">Image must only be found at the conceptEntry level.</assert>
+            <assert test="parent::tbx:conceptEntry or parent::tbx:langSec">Image must only be found at the conceptEntry or langSec levels.</assert>
         </rule>
     </pattern>
     
