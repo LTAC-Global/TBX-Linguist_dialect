@@ -21,7 +21,7 @@ value of the name attribute. -->
             <levels>
                 <level>termSec</level>
             </levels>
-            <contents datatype="PCDATA"/>
+            <contents datatype="string"/>
         </adminSpec>
         <adminNoteSpec name="readingNote" datcatId="UNKNOWN">
             <levels>
@@ -41,7 +41,7 @@ value of the name attribute. -->
             </contents>
         </termNoteSpec>
         <termNoteSpec name="transferComment" datcatId="http://www.datcatinfo.net/datcat/DC-520">
-            <contents datatype="PCDATA"/>
+            <contents datatype="string"/>
         </termNoteSpec>
     </datCatSet>
 </tbxmd>
